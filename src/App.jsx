@@ -1,25 +1,15 @@
-import { Planet } from "react-planet";
+import { BrowserRouter, Route, Routes } from "react-router-dom/dist";
+import Horoscope from "../Horoscope";
 
+// import RadialMenu from "./RadialMenu";
 function App() {
   return (
-    <div className="main">
-      <div className="nav">
-        <span>AstroWise</span>
-      </div>
-      <div className="content">
-        <div className="horoscope">
-          <h1 className="sign-name">Sagittarius</h1>
-          <p className="date">Nov. 22 - Dec. 21</p>
-          <p className="horoscope-content">
-            Curious and energetic, Sagittarius is one of the biggest travelers
-            among all zodiac signs. Their open mind and philosophical view
-            motivates them to wander around the world in search of the meaning
-            of life.
-          </p>
-        </div>
-        <div className="horoscope-menu"></div>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Horoscope />}></Route>
+        <Route path="/:sign" element={<Horoscope />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

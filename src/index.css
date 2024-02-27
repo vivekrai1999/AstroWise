@@ -13,7 +13,7 @@ body {
 .main {
   background-color: #2a2935;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .nav {
@@ -41,7 +41,6 @@ body {
 }
 
 .horoscope-menu {
-  background-color: blue;
   width: 55%;
   display: flex;
   align-items: center;
@@ -55,12 +54,72 @@ body {
 }
 
 .horoscope .date {
-  color: yellow;
+  color: #eace8b;
   font-size: 1.5vw;
   margin-bottom: 1vw;
 }
 
 .horoscope-content {
+  text-align: justify;
+  font-weight: 300;
   color: #fff;
+  font-size: 1.1vw;
   font-family: "IBM Plex Mono", monospace;
+}
+
+.menu-item {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: #32313f;
+  box-shadow: #27252563 0px 8px 24px;
+  border-radius: 100px;
+}
+
+.menu-item:hover {
+  background-color: #939dff;
+}
+
+.sign-button {
+  height: 1.5vw;
+  width: 1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5vw;
+  background-color: #32313f;
+  color: #fff;
+  border-radius: 100%;
+}
+
+.sign-button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.radial-menu {
+  position: relative;
+}
+
+.menu-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: transform 0.2s;
+}
+
+.menu-item:hover {
+  transform: scale(1.1);
 }
