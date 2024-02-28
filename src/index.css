@@ -17,9 +17,11 @@ body {
 }
 
 .nav {
-  height: 4rem;
+  display: flex;
+  align-items: center;
+  height: 5rem;
   padding-left: 5vw;
-  padding-top: 2vw;
+  /* padding-top: 2vw; */
 }
 
 .nav span {
@@ -30,17 +32,16 @@ body {
 
 .content {
   display: flex;
-  width: 90%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   height: 80%;
-  gap: 2vw;
 }
 
 .horoscope {
   width: 45%;
-  height: calc(100vh - 4rem);
-  padding: 5vw 5vw;
+  height: calc(100vh - 5rem);
+  padding: 3vw 3vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +57,7 @@ body {
 
 .horoscope-menu {
   width: 55%;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 5rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,38 +76,21 @@ body {
 }
 
 .horoscope-content {
-  text-align: justify;
   font-weight: 300;
   color: #fff;
   font-size: 1.1vw;
   font-family: "IBM Plex Mono", monospace;
 }
 
-.menu-item {
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background-color: #32313f;
-  box-shadow: rgba(33, 33, 33, 0.2) 0px 2px 8px 0px;
-  border-radius: 100px;
-}
-
-.menu-item:hover {
-  background-color: #8d98ff;
-}
-
 .sign-button {
-  height: 1.5vw;
-  width: 1.5vw;
+  /* height: 1.5vw;
+  width: 1.5vw; */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2.5vw;
   background-color: #32313f;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
   color: #fff;
   border-radius: 100%;
 }
@@ -125,8 +109,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px; /* Adjust size as needed */
-  height: 50px; /* Adjust size as needed */
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   color: white;
   cursor: pointer;
@@ -137,10 +121,20 @@ body {
 
 .menu-item:hover {
   transform: scale(1.1);
+  background-color: #8d98ff;
 }
 
 .active-button {
   background-color: #939dff;
-  box-shadow: rgba(141, 152, 255, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(141, 152, 255, 0.25) 0px 5px 10px;
   transform: scale(1.1);
+}
+
+.logo {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -57,7 +57,9 @@ function Horoscope() {
             </div>
           )}
         </div>
-        <RadialMenu lables={lables} onZodiacClick={handleZodiacClick} />
+        <div className="horoscope-menu">
+          <RadialMenu lables={lables} onZodiacClick={handleZodiacClick} />
+        </div>
       </div>
     </div>
   );

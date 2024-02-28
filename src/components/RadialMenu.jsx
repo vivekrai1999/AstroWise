@@ -5,8 +5,8 @@ function RadialMenu({ lables, onZodiacClick }) {
 
   const totalItems = lables.length;
   const angleStep = (2 * Math.PI) / totalItems;
-  const radius = 190; // Radius of the circle
-  const center = { x: 200, y: 200 }; // Center coordinates of the circle
+  const radius = 200; // Radius of the circle
+  const center = { x: -30, y: -30 }; // Center coordinates of the circle
 
   const getPosition = (index) => {
     const angle = (index / totalItems) * 2 * Math.PI;
@@ -15,7 +15,8 @@ function RadialMenu({ lables, onZodiacClick }) {
     return { x, y };
   };
   return (
-    <div className="horoscope-menu radial-menu">
+    <div className="radial-menu">
+      <img src="./public/logo.png" alt="" className="logo" />
       {lables.map((label, index) => {
         const position = getPosition(index);
         const active = isActive === index;
