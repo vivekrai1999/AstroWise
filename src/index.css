@@ -17,6 +17,7 @@ body {
 }
 
 .nav {
+  height: 4rem;
   padding-left: 5vw;
   padding-top: 2vw;
 }
@@ -33,15 +34,29 @@ body {
   margin-left: auto;
   margin-right: auto;
   height: 80%;
+  gap: 2vw;
 }
 
 .horoscope {
   width: 45%;
+  height: calc(100vh - 4rem);
   padding: 5vw 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.horoscope-data {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
 }
 
 .horoscope-menu {
   width: 55%;
+  height: calc(100vh - 4rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,12 +91,12 @@ body {
   width: 70px;
   height: 70px;
   background-color: #32313f;
-  box-shadow: #27252563 0px 8px 24px;
+  box-shadow: rgba(33, 33, 33, 0.2) 0px 2px 8px 0px;
   border-radius: 100px;
 }
 
 .menu-item:hover {
-  background-color: #939dff;
+  background-color: #8d98ff;
 }
 
 .sign-button {
@@ -121,5 +136,11 @@ body {
 }
 
 .menu-item:hover {
+  transform: scale(1.1);
+}
+
+.active-button {
+  background-color: #939dff;
+  box-shadow: rgba(141, 152, 255, 0.2) 0px 2px 8px 0px;
   transform: scale(1.1);
 }
