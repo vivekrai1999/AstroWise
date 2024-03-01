@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import RadialMenu from "./RadialMenu";
 import { lables } from "../data/lables";
 import { ThreeDots } from "react-loader-spinner";
+import debounce from "debounce";
 
 function Horoscope() {
   const parentRef = useRef(null);
