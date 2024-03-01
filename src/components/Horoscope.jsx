@@ -1,11 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import RadialMenu from "./RadialMenu";
 import { lables } from "../data/lables";
 import { ThreeDots } from "react-loader-spinner";
 
 function Horoscope() {
+  const parentRef = useRef(null);
   const [horoscope, setHoroscope] = useState({});
   const [isLoading, setisLoading] = useState(false);
+  const [center, setCenter] = useState({ x: 0, y: 0 });
+  const [radius, setRadius] = useState(0);
+
+  useEffect(() => {
+    const parentRect = parentRef.current.getBoundingClientRect();
+    const newCenter = {
+      x: parentRect.width / 2,
+      y: parentRect.height / 2,
+    };
+    setCenter(newCenter);
+    setRadius(Math.min(parentRect.width, parentRect.height) * 0.4);
+  }, []);
 
   async function handleZodiacClick(zodiacSign) {
     try {
@@ -22,7 +35,6 @@ function Horoscope() {
       try {
         const res = await fetch(`http://localhost:4000/${lables[0].name}`);
         const data = await res.json();
-        console.log(data);
         setHoroscope(data);
       } catch (error) {}
     }
@@ -57,8 +69,13 @@ function Horoscope() {
             </div>
           )}
         </div>
-        <div className="horoscope-menu">
-          <RadialMenu lables={lables} onZodiacClick={handleZodiacClick} />
+        <div className="horoscope-menu" ref={parentRef}>
+          <RadialMenu
+            labels={lables}
+            center={center}
+            radius={radius}
+            onZodiacClick={handleZodiacClick}
+          />
         </div>
       </div>
     </div>
